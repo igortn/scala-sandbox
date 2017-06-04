@@ -1,6 +1,5 @@
 package implicitmacro
 
-import Implicits._
 
 object Ex1 {
 

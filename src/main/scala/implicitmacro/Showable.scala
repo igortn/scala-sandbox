@@ -5,5 +5,18 @@ package implicitmacro
   * @tparam T
   */
 trait Showable[T] {
+
   def show(x: T): String
+
+}
+
+/**
+  * Companion object to keep implicits in.
+  */
+object Showable {
+
+  implicit object IntShowable extends Showable[Int] {
+    def show(x: Int): String = x.toString
+  }
+
 }
