@@ -1,4 +1,4 @@
-package implicitmacro
+package typeclasses
 
 /**
   * Type class which abstracts over a pretty-printing strategy.

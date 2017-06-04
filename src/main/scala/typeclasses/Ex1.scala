@@ -1,4 +1,4 @@
-package implicitmacro
+package typeclasses
 
 
 object Ex1 {
