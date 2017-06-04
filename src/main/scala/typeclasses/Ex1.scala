@@ -9,6 +9,8 @@ object Ex1 {
 
     println(show(42))
 
+    // Implicit not found. Custom error message is printed (annotation on the trait).
+    // println(show("42"))
   }
 
 }
