@@ -14,4 +14,16 @@ object streams {
   def constant[A](a: A): Stream[A] =
     unfold(a)(a => Some((a, a)))
 
+  def map[A,B](s: Stream[A])(f: A => B): Stream[B] = ???
+
+  def take[A](s: Stream[A])(n: Int): Stream[A] = ???
+
+  def takeWhile[A](s: Stream[A])(p: A => Boolean): Stream[A] = ???
+
+//  def zipWith[A]
+//
+//  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])]
+
 }
+
+
