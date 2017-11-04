@@ -5,9 +5,6 @@ package state
   */
 case class State[S,A](run: S => (A,S)) {
 
-  def unit(a: A): State[S,A] =
-    State(s => (a, s))
-
   def map[B](f: A => B): State[S,B] =
     State(s => {
       val (a, s1) = run(s)
@@ -20,4 +17,12 @@ case class State[S,A](run: S => (A,S)) {
       val State(rb) = f(a)
       rb(s1)
     })
+}
+
+
+object State {
+
+  def unit[S,A](a: A): State[S,A] =
+    State(s => (a, s))
+
 }
