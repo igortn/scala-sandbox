@@ -1,6 +1,6 @@
 import scala.collection.immutable.Stream.Empty
 
-object streams {
+object Streams {
 
   // corecursive function that generates a stream
   def unfold[A,S](s: S)(f: S => Option[(A,S)]): Stream[A] = f(s) match {
