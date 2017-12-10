@@ -16,10 +16,14 @@ case class Wrapper(wrapped: String)
  *
  * In addition, we can use an implicit conversion to make
  * foo() look like it's available on the Wrapper instance.
+  *
+  * [A : B] is the 'context bound' typically used with the typeclass
+  * pattern. The following definition 'def f[A : B](a: A) = ???"
+  * means that there is an implicit value of type B[A] available.
  */
 
 object CanFoo {
-  def apply[A:CanFoo]: CanFoo[A] = implicitly
+  def apply[A : CanFoo]: CanFoo[A] = implicitly
 
   implicit val wrapperCanFooInstance: CanFoo[Wrapper] = new CanFoo[Wrapper] {
     override def foo(w: Wrapper): String = w.wrapped

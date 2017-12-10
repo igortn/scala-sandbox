@@ -12,7 +12,7 @@ trait Show[A] {
 }
 
 object Show {
-  def apply[A:Show]: Show[A] = implicitly
+  def apply[A : Show]: Show[A] = implicitly
 
   implicit val personShowInst: Show[Person] = new Show[Person] {
     override def show(p: Person): String = s"${p.firstName} ${p.lastName}"
@@ -30,7 +30,7 @@ trait Eq[A] {
 }
 
 object Eq {
-  def apply[A:Eq]: Eq[A] = implicitly
+  def apply[A : Eq]: Eq[A] = implicitly
 
   implicit val personEqInst: Eq[Person] = new Eq[Person] {
     override def <>(p1: Person, p2: Person): Boolean = p1.ssn == p2.ssn
