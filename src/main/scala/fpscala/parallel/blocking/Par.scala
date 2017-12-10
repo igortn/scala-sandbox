@@ -1,7 +1,7 @@
 // This implementation is based on the java Future which blocks
 // on the get() call. Thus, this is not fully non-blocking implementation.
 
-package fpscala.parallel
+package fpscala.parallel.blocking
 
 import java.util.concurrent.{Callable, ExecutorService, Future, TimeUnit}
 

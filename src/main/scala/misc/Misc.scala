@@ -2,10 +2,10 @@ package misc
 
 object Misc {
 
-  def shuffle[A](list: List[A]): List[A] = {
+  def shuffle[A](as: List[A]): List[A] = {
     import scala.collection.mutable.ListBuffer
 
-    val in = list.to[ListBuffer]
+    val in = as.to[ListBuffer]
     val out = ListBuffer[A]()
     val r = new java.util.Random()
 
@@ -17,4 +17,7 @@ object Misc {
 
     out.toList
   }
+
+  def reverse[A](as: List[A]): List[A] =
+    as.foldLeft(Nil: List[A])((ys, y) => y :: ys)
 }

@@ -1,19 +1,12 @@
-import Dependencies._
+name := "tutorial"
 
-lazy val root = (project in file(".")).
-  settings(
-    inThisBuild(List(
-      organization := "itn",
-      scalaVersion := "2.12.2",
-      version      := "0.1.0-SNAPSHOT"
-    )),
+version := "0.1.0"
 
-    name := "tutorial",
+scalaVersion := "2.12.4"
 
-    libraryDependencies ++= Seq(
-      scalaTest,
-      cats
-    ),
+scalacOptions += "-Ypartial-unification"
 
-    scalacOptions += "-Ypartial-unification"
-  )
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "3.0.4" % "test"
+)
+
