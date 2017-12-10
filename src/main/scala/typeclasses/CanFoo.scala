@@ -20,6 +20,11 @@ case class Wrapper(wrapped: String)
   * [A : B] is the 'context bound' typically used with the typeclass
   * pattern. The following definition 'def f[A : B](a: A) = ???"
   * means that there is an implicit value of type B[A] available.
+  * The classic example is Scala 2.8's Ordering:
+  *
+  *   def f[A : Ordering](a1: A, a2: A) =
+  *     if (implicitly[Ordering[A]].lt(a, b)) a
+  *     else b
  */
 
 object CanFoo {
