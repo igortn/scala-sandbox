@@ -1,4 +1,4 @@
-/************************************************
+/**
   * Conceptually the same example as CanFoo
   * but with multiple typeclasses.
   */

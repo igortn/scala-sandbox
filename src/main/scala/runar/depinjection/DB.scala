@@ -10,7 +10,7 @@ case class DB[A](g: Connection => A) {
   def map[B](f: A => B): DB[B] = DB(f compose g)
 
   def flatMap[B](f: A => DB[B]): DB[B] =
-    DB(c => (f compose g) (c).g(c))
+    DB(c => (f compose g)(c)(c))
 }
 
 object DB {
