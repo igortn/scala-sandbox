@@ -23,5 +23,5 @@ object Reader {
   implicit def reader[A, B](f: A => B): Reader[A, B] =
     Reader(f)
 
-  def pure[C, A](a: A): Reader[C, A] = _ => a
+  def pure[C, A](a: A): Reader[C, A] = (_: C) => a
 }
